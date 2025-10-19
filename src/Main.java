@@ -9,26 +9,30 @@ public class Main {
 // creates frame
 JFrame frame = new JFrame("Pomodoro Timer");
 
-//this is a text label that goes somewhere in the interface idk where yet.
-JLabel textLabel = new JLabel("test");
+// center text label
+JLabel textLabel = new JLabel("Click start/stop timer button to start the timer.");
 
 //make panel to hold the buttons
 JPanel timerPanel = new JPanel();
 
 //Start timer button
-        JButton startTimer = new JButton("Start Timer");
+        JButton startstopTimer = new JButton("Start/Stop Timer");
+startstopTimer.addActionListener(e -> System.out.println("start/stop Pomodoro Timer"));
 
-startTimer.addActionListener(e -> System.out.println("Start Pomodoro Timer"));
+//Reset timer button
+        JButton reset = new JButton("Reset");
+        reset.addActionListener(e -> System.out.println("reset Pomodoro Timer"));
 
 //centers the text from test jlabel
 textLabel.setHorizontalAlignment(SwingConstants.CENTER);
         textLabel.setVerticalAlignment(SwingConstants.VERTICAL);
 frame.add(textLabel);
 
-//add button
-        frame.add(startTimer);
+//add buttons to panel
+       timerPanel.add(startstopTimer);
+        timerPanel.add(reset);
 
-//add panel to frame
+//add panels to frame
 frame.add(timerPanel, BorderLayout.NORTH);
 
 
